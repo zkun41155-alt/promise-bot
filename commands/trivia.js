@@ -111,14 +111,14 @@ module.exports = {
       .setColor(difficultyColors[difficulty])
       .setTitle(`🧠 Trivia — ${difficultyEmoji[difficulty]} ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`)
       .setDescription(`**${q.q}**\n\n${shuffled.map((o, i) => `${emojis[i]} ${o}`).join('\n')}`)
-      .setFooter({ text: 'You have 20 seconds to react!' })
+      .setFooter({ text: 'You have 7 seconds to react!' })
       .setTimestamp();
 
     const msg = await interaction.reply({ embeds: [embed], fetchReply: true });
     for (let i = 0; i < shuffled.length; i++) await msg.react(emojis[i]);
 
     const filter = (reaction, user) => emojis.includes(reaction.emoji.name) && !user.bot;
-    const collector = msg.createReactionCollector({ filter, time: 20000, max: 1 });
+    const collector = msg.createReactionCollector({ filter, time: 7000, max: 1 });
 
     collector.on('collect', async (reaction, user) => {
       const chosen = emojis.indexOf(reaction.emoji.name);
