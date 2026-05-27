@@ -8,22 +8,21 @@ module.exports = {
   async execute(interaction) {
     const embed = new EmbedBuilder()
       .setColor('#5865F2')
-      .setTitle('📖 ¿Promise? Bot Commands')
-      .setDescription('Here are all available commands:')
+      .setTitle('📖 ¿Promise? Bot — All Commands')
+      .setThumbnail(interaction.client.user.displayAvatarURL())
       .addFields(
-        { name: '🎉 Welcome & Server', value: '`/setwelcome` `/serverinfo` `/userinfo` `/roles`', inline: false },
-        { name: '🎨 Embeds & Messages', value: '`/embed` `/say` `/announce`', inline: false },
-        { name: '🔨 Moderation', value: '`/kick` `/ban` `/unban` `/mute` `/unmute` `/warn` `/warnings` `/clear`', inline: false },
-        { name: '🎮 Fun & Games', value: '`/8ball` `/roll` `/coinflip` `/joke` `/meme` `/roast` `/compliment`', inline: false },
-        { name: '💘 Social', value: '`/ship` `/truth` `/dare` `/wyr` `/steal`', inline: false },
-        { name: '😂 Rate Me', value: '`/iq` `/gayrate` `/howcringe` `/pp`', inline: false },
-        { name: '🕵️ Fun Actions', value: '`/hack` `/trivia`', inline: false },
-        { name: '📊 Utility', value: '`/poll` `/remind` `/avatar` `/ping` `/botinfo` `/calc`', inline: false },
+        { name: '🔨 Moderation', value: '`/kick` `/ban` `/unban` `/mute` `/unmute` `/warn` `/warnings` `/clear` `/lock` `/unlock` `/slowmode` `/nuke` `/nickname`', inline: false },
+        { name: '🎨 Embeds & Announcements', value: '`/embed` `/say` `/announce`', inline: false },
+        { name: '🎉 Server Info', value: '`/setwelcome` `/serverinfo` `/userinfo` `/roles` `/avatar`', inline: false },
+        { name: '💰 Economy', value: '`/balance` `/daily` `/weekly` `/work` `/crime` `/rob` `/give` `/richlist`', inline: false },
+        { name: '🎰 Games & Gambling', value: '`/slots` `/blackjack` `/gamble` `/rps` `/trivia` `/wyr` `/truth` `/dare`', inline: false },
+        { name: '💘 Social & Actions', value: '`/ship` `/hug` `/kiss` `/slap` `/fight` `/marry` `/steal`', inline: false },
+        { name: '😂 Fun & Rates', value: '`/8ball` `/roll` `/coinflip` `/joke` `/meme` `/roast` `/compliment` `/hack` `/gayrate` `/iq` `/howcringe`', inline: false },
+        { name: '📋 Utility', value: '`/poll` `/remind` `/calc` `/quote` `/wordcount` `/ping` `/botinfo`', inline: false },
         { name: '⭐ Leveling', value: '`/rank` `/leaderboard` `/setxp`', inline: false },
       )
-      .setFooter({ text: `Requested by ${interaction.user.tag} • ¿Promise? Bot`, iconURL: interaction.user.displayAvatarURL() })
+      .setFooter({ text: `Requested by ${interaction.user.tag}`, iconURL: interaction.user.displayAvatarURL() })
       .setTimestamp();
-
     await interaction.reply({ embeds: [embed] });
   },
 };
