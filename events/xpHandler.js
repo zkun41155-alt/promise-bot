@@ -28,15 +28,10 @@ module.exports = {
 
     const newLevel = getLevel(xpData[key].xp);
     if (newLevel > xpData[key].level) {
-      xpData[key].level = newLevel;
-      const embed = new EmbedBuilder()
-        .setColor('#FEE75C')
-        .setTitle('🎉 Level Up!')
-        .setDescription(`${message.author} reached **Level ${newLevel}**! Keep it up!`)
-        .setTimestamp();
-      message.channel.send({ embeds: [embed] }).catch(() => {});
-    }
-
+  xpData[key].level = newLevel;
+}
     saveXP(xpData);
   },
 };
+
+
