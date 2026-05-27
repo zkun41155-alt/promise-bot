@@ -3,6 +3,7 @@ module.exports = {
   once: true,
   execute(client) {
     console.log(`🤖 ${client.user.tag} is online and ready!`);
-    client.user.setActivity('/help | Made with ❤️', { type: 3 }); // WATCHING
+    client.user.setActivity('Good things takes time', { type: 3 }); // WATCHING
   },
 };
+
